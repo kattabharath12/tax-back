@@ -46,6 +46,10 @@ app.add_middleware(
 async def health_check():
     return {"status": "healthy", "message": "Tax API is running"}
 
+@app.get("/")
+async def root():
+    return {"status": "ok", "message": "Welcome to the Tax API"}
+
 # Global exception handler
 @app.exception_handler(Exception)
 async def global_exception_handler(request: Request, exc: Exception):

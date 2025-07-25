@@ -49,6 +49,7 @@ async def health_check():
 @app.get("/")
 async def root():
     return {"status": "ok", "message": "Welcome to the Tax API"}
+
 # Global exception handler
 @app.exception_handler(Exception)
 async def global_exception_handler(request: Request, exc: Exception):
